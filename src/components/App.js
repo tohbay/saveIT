@@ -1,10 +1,14 @@
 import React from "react";
+import { Route, Switch } from "react-router-dom";
+import LandingPage from './LandingPage/LandingPage';
 
 
 function App() {
   return (
     <div>
-      <h1>Welcome to Banka</h1>
+      <Switch>
+        <Route exact path="/" component={LandingPage} />
+      </Switch>
     </div>
   );
 }
