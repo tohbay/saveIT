@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/css/homepage.css";
+import { Link } from 'react-router-dom';
 
 
 function LandingPage() {
@@ -8,13 +9,13 @@ function LandingPage() {
       <div id="header">
         <div id="container">
           <div className="navigation">
-          <a href="/"><p className="logo">Banka</p></a>
+          <Link to="/"><p className="logo">Banka</p></Link>
             <nav id="nav">
               <ul>
                 <li>
-                  <a className="btn" href="/login">
+                  <Link className="btn" to="/login">
                     Login
-                  </a>
+                  </Link>
                 </li>
               </ul>
             </nav>
@@ -23,9 +24,9 @@ function LandingPage() {
             <div className="caption-contents">
               <h1>Banka Money Services</h1>
               <p>Manage Your Money with Ease</p>
-              <a className="btn" href="/signup">
+              <Link className="call-to-action" to="/signup">
                 Bank with us
-              </a>
+              </Link>
             </div>
           </div>
         </div>
