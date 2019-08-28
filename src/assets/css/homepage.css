@@ -1,0 +1,161 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Core styles */
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.5;
+  /* height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url(../images/background.jpg);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.btn {
+  display: inline-block;
+  border: 1px solid;
+  border-radius: 2px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+/* Header */
+#header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  color: #fff;
+}
+
+#header .navigation {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 0;
+}
+
+#header .logo {
+  margin-left: 0.3em;
+  font-weight: 800;
+  font-size: 1.7em;
+  flex-direction: column;
+  color: #fff !important;
+  text-decoration: none;
+}
+
+#header nav {
+  margin-right: 0.5em;
+}
+
+#header nav ul {
+  display: flex;
+  flex-direction: row;
+  list-style: none;
+}
+
+#header nav ul li {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  display: inline-block;
+  margin-left: 0.5em;
+}
+
+#header nav ul li a {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-decoration: none;
+  padding: 0.1em 1em;
+  color: #000;
+  background: #fff;
+  border: none;
+}
+
+#nav .btn:hover {
+  color: #fff;
+  background: none;
+  border: 1px solid #fff;
+}
+
+#header .header-caption {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 80vh;
+  font-size: 1.2em;
+  text-align: center;
+}
+
+.caption-contents p {
+  font-style: italic
+}
+
+.caption-contents .btn {
+  width: fit-content;
+  padding: 0.2em 1em;
+  color: #000;
+  background: #fff;
+  text-transform: capitalize;
+  font-weight: 500;
+  border: none;
+}
+
+.header-caption .btn:hover {
+  background: none;
+  color: #fff;
+  border: 1px solid #fff;
+}
+
+
+/* Footer */
+#footer {
+  min-width: 100vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 50px;
+  background: #242424;
+  font-weight: bold;
+  color: #fff;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  text-align: center;
+}
+
+
+/* Media Queries */
+
+@media screen and (min-width: 768px) {
+
+  #Box {
+    display: flex;
+  }
+
+}
+
+@media screen and (min-width: 1140px) {
+
+  #container {
+    width: 80%;
+    margin: 0 auto;
+  }
+
+  #header #nav {
+    margin-right: 0;
+  }
+
+  #header .header-caption {
+    font-size: 2.5em;
+  }
+}
