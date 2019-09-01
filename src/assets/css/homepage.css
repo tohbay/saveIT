@@ -50,6 +50,10 @@ body {
   padding: 1em 0;
 }
 
+.app-logo {
+  text-decoration: none;
+}
+
 #header .logo {
   margin-left: 0.3em;
   font-weight: 800;
