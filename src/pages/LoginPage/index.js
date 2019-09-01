@@ -1,15 +1,15 @@
 import React, { Component } from "react";
 import "../../assets/css/auth.css";
 import { Link, NavLink } from "react-router-dom";
-import SignupForm from "../../components/SignupForm";
+import LoginForm from "../../components/LoginForm";
 
-class SignupPage extends Component {
+class LoginPage extends Component {
   render() {
     return (
       <div id="header">
         <div id="container">
           <div className="navigation">
-            <Link to="/" className="app-logo">
+            <Link to="/" className="app-logo ">
               <p className="logo">Banka</p>
             </Link>
             <nav id="nav">
@@ -20,8 +20,8 @@ class SignupPage extends Component {
                   </NavLink>
                 </li>
                 <li>
-                  <NavLink className="btn" to="/login">
-                    Login
+                  <NavLink className="btn" to="/Signup">
+                    Signup
                   </NavLink>
                 </li>
               </ul>
@@ -29,7 +29,7 @@ class SignupPage extends Component {
           </div>
           <main id="signup">
             <section>
-              <SignupForm />
+              <LoginForm />
             </section>
           </main>
         </div>
@@ -38,4 +38,4 @@ class SignupPage extends Component {
   }
 }
 
-export default SignupPage;
+export default LoginPage;
