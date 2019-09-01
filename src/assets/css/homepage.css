@@ -18,12 +18,20 @@ body {
   background-size: cover;
 }
 
-.btn {
+.call-to-action {
   display: inline-block;
   border: 1px solid;
   border-radius: 2px;
   text-decoration: none;
   font-weight: bold;
+  color: #000;
+  background: #fff;
+  padding: 0.2em 1em
+}
+
+.call-to-action:hover {
+  background: none;
+  color: #fff;
 }
 
 /* Header */
@@ -95,8 +103,14 @@ body {
   text-align: center;
 }
 
+.caption-contents h1 {
+  line-height: 1;
+  margin-bottom: 0.8em;
+}
+
 .caption-contents p {
-  font-style: italic
+  font-style: italic;
+  margin-bottom: 1.2em;
 }
 
 .caption-contents .btn {
@@ -113,6 +127,7 @@ body {
   background: none;
   color: #fff;
   border: 1px solid #fff;
+  text-decoration: none;
 }
 
 
