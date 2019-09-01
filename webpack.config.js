@@ -1,18 +1,54 @@
-const webpack = require('webpack');
-const webpackMerge = require('webpack-merge');
-const commonConfig = require('./webpack.common');
+const path = require('path');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = env => {
-  let envConfig;
-  !env.mode
-    ? (envConfig = require(`./webpack-build-utils/webpack.development`))
-    : (envConfig = require(`./webpack-build-utils/webpack.${env.mode}`));
-
-  return webpackMerge(
-    {
-      mode: env.mode
-    },
-    commonConfig,
-    envConfig
-  );
+module.exports = {
+  entry: './src/index.js',
+  output: {
+    path: path.join(__dirname, '/dist'),
+    filename: 'index_bundle.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.(js|jsx)$/,
+        exclude: /node_modules/,
+        use: {
+          loader: 'babel-loader'
+        }
+      },
+      {
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.scss$/,
+        use: ['style-loader', 'css-loader', 'sass-loader']
+      },
+      {
+        test: /\.less$/,
+        loaders: ['style=loader', 'css-loader', 'less-loader']
+      },
+      {
+        test: /\.svg$/,
+        loader: 'svg-inline-loader?classPrefix'
+      },
+      {
+        test: /\.(jpe?g|png|gif)$/,
+        use: [
+          {
+            loader: 'file-loader',
+            options: {}
+          }
+        ]
+      }
+    ]
+  },
+  plugins: [
+    new HtmlWebpackPlugin({
+      template: './src/index.html'
+    })
+  ],
+  devServer: {
+    historyApiFallback: true
+  }
 };
