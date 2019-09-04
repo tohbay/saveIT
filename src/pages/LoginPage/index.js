@@ -1,10 +1,60 @@
 import React, { Component } from "react";
 import "../../assets/css/auth.css";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, withRouter } from "react-router-dom";
 import LoginForm from "../../components/LoginForm";
+import { connect } from "react-redux";
+import { notify } from "react-notify-toast";
+import { loginAction } from "../../actions/authActions";
+export class LoginPage extends Component {
+  state = {
+    email: "",
+    password: "",
+    redirect: false,
+  };
 
-class LoginPage extends Component {
+  UNSAFE_componentDidMount() {
+    const user_token = localStorage.getItem("user_token");
+    if (user_token) {
+      this.setState({
+        redirect: true,
+      });
+    }
+  }
+
+  onChange = event => {
+    this.setState({
+      [event.target.name]: event.target.value,
+    });
+  };
+
+  onLogin = event => {
+    event.preventDefault();
+    const { email, password } = this.state;
+    const { login, history } = this.props;
+    const loginData = {
+      email,
+      password,
+    };
+    if (email === "") {
+      notify.show("Please provide an email", "error", 4000);
+      return;
+    }
+    if (password === "") {
+      notify.show("Please provide a password", "error", 4000);
+      return;
+    }
+    login(loginData, history);
+  };
+
   render() {
+    const { loading, history } = this.props;
+    const { redirect } = this.state;
+    if (redirect) {
+      history.push("/client");
+      location.reload();
+      return;
+    }
+
     return (
       <div id="header">
         <div id="container">
@@ -29,7 +79,11 @@ class LoginPage extends Component {
           </div>
           <main id="signup">
             <section>
-              <LoginForm />
+              <LoginForm
+                loading={loading}
+                onChange={this.onChange}
+                onLogin={this.onLogin}
+              />
             </section>
           </main>
         </div>
@@ -38,4 +92,15 @@ class LoginPage extends Component {
   }
 }
 
-export default LoginPage;
+export const mapStateToProps = state => ({
+  loading: state.auth.loading,
+});
+
+export default withRouter(
+  connect(
+    mapStateToProps,
+    {
+      login: loginAction,
+    },
+  )(LoginPage),
+);

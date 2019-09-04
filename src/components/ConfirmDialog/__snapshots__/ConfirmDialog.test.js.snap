@@ -1,0 +1,44 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ConfirmDialog snapshot test 1`] = `
+<div
+  id="dlg-wrapper"
+>
+  <div
+    id="dlg-box"
+  >
+    <div
+      id="dlg-header"
+    >
+      Creating Account
+      <div />
+    </div>
+    <div
+      id="dlg-body"
+    >
+      You are creating an account:
+      <span>
+         
+        Account 
+        <span
+          id="accountType"
+        />
+      </span>
+    </div>
+    <div
+      id="dlg-footer"
+    >
+      <button
+        className="btn_n"
+      >
+        Cancel
+      </button>
+      <button
+        className="btn_n"
+      >
+        Proceed
+      </button>
+    </div>
+  </div>
+</div>
+`;

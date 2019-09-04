@@ -1,0 +1,75 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App should render without crashing 1`] = `
+<div>
+  <div
+    id="notification-wrapper"
+  />
+  <div
+    id="header"
+  >
+    <div
+      id="container"
+    >
+      <div
+        className="navigation"
+      >
+        <a
+          className="app-logo"
+          href="/"
+          onClick={[Function]}
+        >
+          <p
+            className="logo"
+          >
+            Banka
+          </p>
+        </a>
+        <nav
+          id="nav"
+        >
+          <ul>
+            <li>
+              <a
+                className="btn"
+                href="/login"
+                onClick={[Function]}
+              >
+                Login
+              </a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+      <div
+        className="header-caption"
+      >
+        <div
+          className="caption-contents"
+        >
+          <h1>
+            Banka Money Services
+          </h1>
+          <p>
+            Manage Your Money with Ease
+          </p>
+          <a
+            className="call-to-action"
+            href="/signup"
+            onClick={[Function]}
+          >
+            Bank with us
+          </a>
+        </div>
+      </div>
+    </div>
+    <footer
+      id="footer"
+    >
+      <p>
+        Tobechukwu Obitube © 2019.
+      </p>
+    </footer>
+  </div>
+</div>
+`;
