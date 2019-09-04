@@ -58,7 +58,7 @@ describe("CreateAccount container", () => {
 
   it("test mapStateToProps", () => {
     const state = {
-      parcels: {
+      accounts: {
         createAccountLoading: false,
       },
     };

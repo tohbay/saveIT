@@ -37,29 +37,6 @@ function ClientForm() {
             <p>Create Account:</p>
           </div>
         </div>
-        <div className="contain">
-          <h1>
-            Send Your Parcel
-            <span> Quick</span> & <span> Easy</span>
-          </h1>
-          <div className="form-box">
-            <span className="from">Account Type: </span>
-            <select
-              id="select"
-              className="select"
-              defaultValue="Choose an account type"
-              // onChange={this.change}
-            >
-              <option disabled>Choose an account type</option>
-              <option value="current">Current</option>
-              <option value="savings">Savings</option>
-            </select>
-
-            <button className="account-btn" onClick={this.showConfirmDialog}>
-              Create Account
-            </button>
-          </div>
-        </div>
       </div>
     </div>
   );

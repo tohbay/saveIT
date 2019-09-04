@@ -24,6 +24,7 @@ module.exports = {
     "!src/actions/**",
     "!src/reducers/**",
     "!src/index.js",
+    "!src/pages/ClientPage/**",
     "!server.js",
     "!**/*.css",
     "!webpack.config.js",
