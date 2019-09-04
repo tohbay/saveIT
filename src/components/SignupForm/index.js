@@ -69,9 +69,9 @@ const SignupForm = ({
         >
           Sign up
         </button>
-        {loading ? <div className="loader" /> : <div />}
         <div className="have-account">
           <p>
+          <span>{loading ? <div className="loader" /> : <div />}</span>
             <span>Already have account?</span>
             <span>
               <Link className="btn" to="/Login">
@@ -84,6 +84,5 @@ const SignupForm = ({
     </form>
   </div>
 );
-// }
 
 export default SignupForm;

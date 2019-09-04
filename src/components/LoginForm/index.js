@@ -3,7 +3,6 @@ import "../../assets/css/form.css";
 import { Link } from "react-router-dom";
 
 function LoginForm({ onChange, email, password, onLogin, loading }) {
-  // const { email, password, onChange, onLogin, loading } = props;
 
   return (
     <div id="form-container">
@@ -13,6 +12,7 @@ function LoginForm({ onChange, email, password, onLogin, loading }) {
           <label htmlFor="email">Email</label>
           <input
             placeholder="Enter Email"
+            id="email"
             name="email"
             type="email"
             value={email}
@@ -28,11 +28,6 @@ function LoginForm({ onChange, email, password, onLogin, loading }) {
             onChange={onChange}
             required
           />
-          {/* <Link className="submit-link" to="/Client">
-            <button type="submit" className="btn">
-              Login
-            </button>
-          </Link> */}
           {loading ? (
             <button
               className="btn submit-link"
@@ -51,9 +46,9 @@ function LoginForm({ onChange, email, password, onLogin, loading }) {
               Login
             </button>
           )}
-          {loading ? <div className="loader" /> : <div />}
           <div className="have-account">
             <p>
+              <span>{loading ? <div className="loader" /> : <div />}</span>
               <span>Don&apos;t have account?</span>
               <span>
                 <Link className="btn" to="/signup">

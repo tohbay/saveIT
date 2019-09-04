@@ -16,7 +16,7 @@ export class SignupPage extends Component {
     redirect: false,
   };
 
-  componentDidMount() {
+  UNSAFE_componentDidMount() {
     const user_token = localStorage.getItem("user_token");
     if (user_token) {
       this.setState({

@@ -1,5 +1,6 @@
 import React from "react";
 import "../../assets/css/client.css";
+import "../../assets/css/createAccount.css";
 import { Link } from "react-router-dom";
 
 function ClientForm() {
@@ -7,7 +8,7 @@ function ClientForm() {
     <div id="client-container">
       <div className="client-actions">
         <div className="client-items user-detail">
-          <h1>Welcome, Client</h1>
+          <h1>Welcome, </h1>
         </div>
         <div className="client-items account-actions">
           <Link to="/Client" id="btn-link">
@@ -28,9 +29,6 @@ function ClientForm() {
         </div>
       </div>
       <div className="client-details account-summary">
-        <li id="account-created" className="account-created ">
-          Account successfully created
-        </li>
         <div
           id="create-account-form"
           className="client-items create-account-form"
@@ -39,29 +37,29 @@ function ClientForm() {
             <p>Create Account:</p>
           </div>
         </div>
-        <form className="account-create">
-          <fieldset>
-            <legend>Select Account Type:</legend>
-            <span className="select-account">
-              <span>Type of Account:</span>
-              <span>
-                <select className="account-type">
-                  <option name="savings" id="savings">
-                    Savings
-                  </option>
-                  <option name="current" id="current">
-                    Current
-                  </option>
-                </select>
-              </span>
-              <span>
-                <button id="create" className="client-btn create">
-                  Create Account
-                </button>
-              </span>
-            </span>
-          </fieldset>
-        </form>
+        <div className="contain">
+          <h1>
+            Send Your Parcel
+            <span> Quick</span> & <span> Easy</span>
+          </h1>
+          <div className="form-box">
+            <span className="from">Account Type: </span>
+            <select
+              id="select"
+              className="select"
+              defaultValue="Choose an account type"
+              // onChange={this.change}
+            >
+              <option disabled>Choose an account type</option>
+              <option value="current">Current</option>
+              <option value="savings">Savings</option>
+            </select>
+
+            <button className="account-btn" onClick={this.showConfirmDialog}>
+              Create Account
+            </button>
+          </div>
+        </div>
       </div>
     </div>
   );
